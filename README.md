@@ -1,6 +1,6 @@
 # Firechat
 <img src="presentation.jpg" alt="image not avaible">
-<p> This is a chat application that allows authenticate with social accounts like google, twiter and facebook.
+<p> This is a chat application that allows the authentication with social accounts like google, twiter and facebook.
     More improvements will become in this app soon!!
   
   This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
