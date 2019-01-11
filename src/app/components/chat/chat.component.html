@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="col-md-12 text-left">
+        <h1><img [src]="_chatService.sendPhotoParner(_chatService.user.uid,_chatService.actualProvider)" class="img-thumb" alt="profile photo"> &nbsp;<small>Chat</small></h1>
+        <label for="">
+            <small>{{_chatService.sendNameParner(_chatService.user.uid)}}</small>
+            <small *ngIf="_chatService.checkStatus(_chatService.user.uid)"> Online</small>
+            <small *ngIf="!_chatService.checkStatus(_chatService.user.uid)"> Disconect</small>
+        </label>
+    </div>
+    <hr>
+    <div class="app-mensajes" id="app-mensajes">
+        <div *ngFor="let chat of _chatService.chats" [ngClass]="{'text-right': _chatService.user.uid == chat.uid}">
+            <span class="badge" [ngClass]="{'badge badge-pill badge-primary': _chatService.user.uid == chat.uid,
+                              'badge badge-pill badge-success': _chatService.user.uid  !=  chat.uid }">{{chat.name}}</span>
+            <div class="container-fluid">
+                <p name="mens">
+                    {{chat.message}}
+                    <small for="mens">{{chat.date | date:'shortTime'}}</small>
+                </p>
+            </div>
+        </div>
+    </div>
+    <input type="text" name="message" class=" form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="message" (keyup.enter)="send_message()" placeholder="send message">
+</div>
